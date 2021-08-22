@@ -24,32 +24,10 @@
 
 
 <script>
-import axios from 'axios'
 
 export default {
   props:['character'], 
   
-   data: function(){
-    return {
-      planet:'',
-      
-    }
-  },
-
-  created(){
-    this.fetch()    
-  },
-
-  methods:{
-    
-    fetch(){        
-      axios.get(this.character.homeworld)
-      .then((res)=>{
-        this.planet = res.data.name;                     
-      })
-    }, 
-         
-  } 
 }
 
 </script>
