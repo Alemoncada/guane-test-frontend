@@ -54,10 +54,8 @@ export default new Vuex.Store({
         this.state.episodes =[]
         for (let episode of this.state.currentCharacter.episode){
           axios.get(episode)
-          .then((res)=>{ 
-          console.log(res.data.name)          
-          this.state.episodes.push(res.data.name) ;
-           
+          .then((res)=>{                  
+          this.state.episodes.push(res.data.name) ;           
           })
           
          }      
