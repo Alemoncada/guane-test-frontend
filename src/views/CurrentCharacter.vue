@@ -1,6 +1,6 @@
 
 <template >
-        <b-container class="pt-5 mb-0">
+        <b-container class="container pt-5 pb-20 mb-0" >
             <h1 class="title text-center">{{currentCharacter.name}} </h1>
             <hr />
             <b-row class="mt-5" >
@@ -23,8 +23,10 @@
                 </b-col>
             </b-row>
             <div id="nav">
-                <router-link to="/"><b-button  variant="success" >Home</b-button></router-link>
+                <router-link to="/"><b-button  variant="success" class="mr-2" >Home</b-button></router-link>
+                <router-link to="/Search"><b-button  variant="success" class="ml-2">Search</b-button></router-link>
             </div>
+            
         </b-container>
     
 </template>

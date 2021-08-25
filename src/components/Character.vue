@@ -15,7 +15,7 @@
           <b-list-group-item ><span class="font-weight-bold text-success">Planet origin :</span> {{character.origin.name}}</b-list-group-item>
           <b-list-group-item ><span class="font-weight-bold text-success">Planet location:</span> {{character.location.name}}</b-list-group-item>
         </b-list-group>
-        <router-link :to="{name: 'CurrentCharacter', params: {name: this.$store.state.page === 1 ? this.$store.state.characters.indexOf(character)+ 1 : this.$store.state.characters.indexOf(character)+ ((this.$store.state.page-1)*20)  + 1 }}">
+        <router-link :to="{name: 'CurrentCharacter', params: {name: this.$store.state.characters.indexOf(character)+ 1}}">
           <b-button  variant="success" >More info</b-button>
         </router-link>
         </b-card>      

@@ -13,7 +13,7 @@ export default new Vuex.Store({
     currentCharacter: [],
     episodes:[],      
     page: 1,
-    pages: 1,        
+    pages: 1,      
     
   },
   mutations: {
@@ -33,14 +33,15 @@ export default new Vuex.Store({
 
     getCharacters({commit}){  
       
-      const params = {
-        page: `${this.state.page}`
-      }
-
-      axios.get("https://rickandmortyapi.com/api/character", {params})
+      for(let i=1; i<=372; i++){
+      
+      this.state.characters = [];
+      axios.get(`https://rickandmortyapi.com/api/character/${i}`)
       .then((res)=>{
-        commit('set_characters', res.data.results) ;        
+        this.state.characters.push(res.data) ;        
       })
+      commit('set_characters',this.state.characters ) 
+      }
     },    
 
     getCurrentCharacter({commit}, characterName){
@@ -61,7 +62,9 @@ export default new Vuex.Store({
          }      
                 
       })    
-    },        
+    }, 
+    
+   
   },
 
   modules: {

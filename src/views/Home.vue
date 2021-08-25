@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <People />      
+      <People />      
   </div>
 </template>
 
@@ -9,10 +9,11 @@
 
 import People from '../components/People.vue'
 
+
 export default {
   name: 'Home',
   components: {
-      People
+      People,     
   }
 }
 </script>
