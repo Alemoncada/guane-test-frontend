@@ -1,21 +1,19 @@
 <template >
-    <div class="container py-5">
+  <div class="container py-5">
       
-      <router-link to="/Search" class="float-left"><b-button  variant="success " >Search</b-button></router-link>      
+    <router-link to="/Search" class="float-left"><b-button  variant="success " >Search</b-button></router-link>      
       
-      <div class="text-center">
-        <h1 class="font-weight-bold title">Rick and Morty App</h1>
-      </div>
+    <div class="text-center">
+      <h1 class="font-weight-bold title">Rick and Morty App</h1>
+     </div>
 
-      <div>
-        <b-row class="justify-content-center">
-          
-          <character  v-for="(character) in characters"  v-bind:key="character.id" v-bind:character="character"/>        
-          
-        </b-row>
-      </div>
-      <div class="mt-5" >
-        <b-row class="justify-content-center">
+    <div>
+      <b-row class="justify-content-center">          
+        <character  v-for="(character) in characters"  v-bind:key="character.id" v-bind:character="character"/>        
+      </b-row>
+    </div>
+    <div class="mt-5" >
+      <b-row class="justify-content-center">
         <b-button @click="changePageFirst()" class="m-2">First</b-button>
         <b-button @click="changePageA()" class="m-2">Prev</b-button>
         <h1> <b-badge>{{this.$store.state.page}}</b-badge></h1>
@@ -23,8 +21,7 @@
         <b-button @click="changePageLast(), window.scrollTo(0,0)" class="m-2">Last</b-button>             
       </b-row>
     </div>      
-</div>
-  
+  </div>  
 </template>
 
 <script>

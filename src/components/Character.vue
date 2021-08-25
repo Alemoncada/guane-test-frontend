@@ -18,7 +18,7 @@
         <router-link :to="{name: 'CurrentCharacter', params: {name: this.$store.state.characters.indexOf(character)+ 1}}">
           <b-button  variant="success" >More info</b-button>
         </router-link>
-        </b-card>      
+      </b-card>      
     </b-card-group>
   </b-col>    
        

@@ -4,8 +4,8 @@
             <b-navbar type="dark" variant="dark">
                 <b-nav-form>
                 <b-form-input v-model="search" class="mr-sm-2" placeholder="character name..." v-on:keyup.enter="searchData"></b-form-input>
-                <b-button variant="outline-success" class="my-2 my-sm-0" type="submit" @click="searchData" >Search</b-button>
-                <router-link to="/"><b-button  variant="outline-success" class="my-2 my-sm-0" >Home</b-button></router-link>
+                <b-button variant="outline-success" class="my-2 my-sm-0 mr-2" type="submit" @click="searchData" >Search</b-button>
+                <router-link to="/"><b-button  variant="outline-success" class="my-2 my-sm-0 ml-2" >Home</b-button></router-link>
                 </b-nav-form>
             </b-navbar>        
         </div>
@@ -44,7 +44,7 @@ export default{
       
         let personages = this.$store.state.characters 
         let search = this.search.toLocaleLowerCase()
-        if(personages.filter(character => character.name.toLocaleLowerCase().includes(search))!= ""){
+        if(personages.filter(character => character.name.toLocaleLowerCase().includes(search))!= "" && search != ""){
         this.characters = personages.filter(character => character.name.toLocaleLowerCase().includes(search))      
         }else{
           this.characters = this.$store.state.characters.filter(character => character.name.toLocaleLowerCase().includes('rick sanchez'));
